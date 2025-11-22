@@ -78,7 +78,7 @@ export default function TestimonialsCarousel() {
 			<button
 				onClick={handlePrevious}
 				disabled={currentIndex === 0}
-				className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all hover:scale-110 disabled:opacity-50 disabled:hover:scale-100"
+				className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
 			>
 				<ChevronLeft className="h-6 w-6 text-[#5C83C1]" />
 			</button>
@@ -87,7 +87,7 @@ export default function TestimonialsCarousel() {
 			<button
 				onClick={handleNext}
 				disabled={currentIndex === testimonials.length - 1}
-				className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all hover:scale-110 disabled:opacity-50 disabled:hover:scale-100"
+				className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
 			>
 				<ChevronRight className="h-6 w-6 text-[#5C83C1]" />
 			</button>
@@ -111,12 +111,15 @@ export default function TestimonialsCarousel() {
 
 			{/* Indicateurs */}
 			<div className="flex justify-center gap-2 mt-8">
-				{testimonials.map((_, i) => (
+				{testimonials.map((_, index) => (
 					<button
-						key={i}
-						onClick={() => scrollToIndex(i)}
-						className={`h-2 rounded-full transition-all ${i === currentIndex ? "w-8 bg-[#5C83C1]" : "w-2 bg-gray-300 hover:bg-gray-400"
+						key={index}
+						onClick={() => scrollToIndex(index)}
+						className={`h-2 rounded-full transition-all ${index === currentIndex
+							? 'w-8 bg-[#5C83C1]'
+							: 'w-2 bg-gray-300 hover:bg-gray-400'
 							}`}
+						aria-label={`Aller au témoignage ${index + 1}`}
 					/>
 				))}
 			</div>
