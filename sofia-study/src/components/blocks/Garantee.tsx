@@ -48,13 +48,25 @@ export default function Garantee() {
             <div className="mt-8 text-center">
               <Button
                 asChild
-                className="bg-[#FCD581] text-gray-900 hover:bg-[#FCD581]/90 font-bold text-xl py-8 px-12 rounded-2xl shadow-xl transition-all hover:scale-105 hover:shadow-2xl border-4 border-gray-900/10"
+                className="
+      bg-[#FCD581] text-gray-900 hover:bg-[#FCD581]/90 font-bold 
+      text-base sm:text-xl 
+      py-6 
+      px-10 
+      rounded-2xl shadow-xl 
+      transition-all hover:scale-105 hover:shadow-2xl 
+      border-4 border-gray-900/10 
+      w-full sm:w-auto                     
+      max-w-full                           
+    "
               >
                 <Link to="/contact">
                   Je veux commencer maintenant
                 </Link>
               </Button>
             </div>
+
+
           </CardContent>
         </Card>
       </div>
